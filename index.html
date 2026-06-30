@@ -190,6 +190,19 @@
     margin-top: 4px;
   }
 
+  .paid-badge {
+    display: inline-block;
+    background: #FAEEDA;
+    color: #854F0B;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 7px;
+    border-radius: 6px;
+    margin-top: 4px;
+  }
+
   .footer-note {
     text-align: center;
     font-size: 11px;
@@ -367,6 +380,15 @@ const viewtowers = [
     icon: "🏢",
     iconClass: "icon-purple",
     query: "One Island East Taikoo Place Hong Kong"
+  },
+  {
+    name: "Sky100 — ICC Tower (Tallest in HK)",
+    np: "स्काई१०० — आईसीसी टावर (सबैभन्दा अग्लो)",
+    note: "100th floor · approx HK$150-198 entry · Hong Kong's tallest building",
+    icon: "🗼",
+    iconClass: "icon-coral",
+    paid: true,
+    query: "Sky100 Hong Kong Observation Deck ICC"
   }
 ];
 
@@ -385,7 +407,7 @@ viewtowers.forEach(place => {
     '<div class="place-name">' + place.name + '</div>' +
     '<div class="place-np">' + place.np + '</div>' +
     '<div class="place-note">' + place.note + '</div>' +
-    '<span class="free-badge">Free · निःशुल्क</span>';
+    (place.paid ? '<span class="paid-badge">Paid entry · शुल्क लाग्छ</span>' : '<span class="free-badge">Free · निःशुल्क</span>');
 
   const btn = document.createElement("a");
   btn.className = "nav-btn";
